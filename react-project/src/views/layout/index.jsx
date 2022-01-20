@@ -8,29 +8,43 @@ import {
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
-import { Route,Link,Routes } from 'react-router-dom'
-import './index.css'
+// import { Route,Link,Routes } from 'react-router-dom'
 import Home from '../../views/home/home.jsx'
 import About from '../../views/about/about.jsx'
+import Alex from '../../views/user/Alex.jsx'
+import Bill from '../../views/user/Bill.jsx'
+import Tom from '../../views/user/Tom.jsx'
+import { Link,Routes ,Route} from 'react-router-dom'
+import './index.css'
+
+import ContentMain from './contentMain.js'
+import SiderMain from './siderMain'
+// import  routes from '././router/index.js' 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 class Index extends React.Component {
   state = {
     collapsed: false,
   };
-
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
     });
   };
-
-  render() {
+  // show_menu = routes.map((item, index) => { 
+  //     if (item.subs) { 
+  //       // <Menu.Item key="1" icon={<UserOutlined />} ><Link to="/home"></Link>
+  //     }
+   
+  // })
+  render () {
     return (
       <Layout>
       <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-        <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <div className="logo" />
+          <SiderMain></SiderMain>
+          {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+            
             <Menu.Item key="1" icon={<UserOutlined />} ><Link to="/home"></Link>
             home
           </Menu.Item>
@@ -45,7 +59,7 @@ class Index extends React.Component {
             <Menu.Item key="4">Bill</Menu.Item>
             <Menu.Item key="5">Alex</Menu.Item>
           </SubMenu>
-        </Menu>
+        </Menu> */}
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" >
@@ -61,11 +75,15 @@ class Index extends React.Component {
             padding: 24,
             minHeight: 280,
           }}
-        >
-            <Routes>
+          >
+            <ContentMain></ContentMain>
+            {/* <Routes>
               <Route path="/home" element={<Home></Home>}></Route>
               <Route path="/about" element={<About></About>}></Route>
-            </Routes>
+              <Route path="/user/tom" element={<Tom></Tom>}></Route>
+              <Route path="/user/bill" element={<Bill></Bill>}></Route>
+              <Route path="/user/alex" element={<Alex></Alex>}></Route>
+            </Routes> */}
         </Content>
       </Layout>
     </Layout>
