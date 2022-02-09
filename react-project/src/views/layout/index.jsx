@@ -43,23 +43,6 @@ class Index extends React.Component {
       <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
           <SiderMain></SiderMain>
-          {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            
-            <Menu.Item key="1" icon={<UserOutlined />} ><Link to="/home"></Link>
-            home
-          </Menu.Item>
-          <Menu.Item key="2" icon={<VideoCameraOutlined />} ><Link to="/about"></Link>
-            nav 2
-          </Menu.Item>
-          <Menu.Item key="3" icon={<UploadOutlined />}>
-            nav 3
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<UserOutlined />} title="User" >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-        </Menu> */}
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" >
